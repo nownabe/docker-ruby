@@ -1,8 +1,8 @@
 FROM buildpack-deps:wheezy
 MAINTAINER nownabe
 
-ENV RUBY_MAJOR 2.2
-ENV RUBY_VERSION 2.2.0
+ENV RUBY_MAJOR 2.1
+ENV RUBY_VERSION 2.1.5
 
 RUN apt-get update && apt-get install -y curl procps && rm -rf /var/lib/apt/lists/*
 

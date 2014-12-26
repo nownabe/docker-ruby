@@ -1,4 +1,4 @@
-FROM nownabe/ruby:2.2.0
+FROM nownabe/ruby:2.1.5
 MAINTAINER nownabe
 
 RUN gem install passenger --prerelease
