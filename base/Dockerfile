@@ -15,7 +15,7 @@ RUN curl -SL "http://cache.ruby-lang.org/pub/ruby/$RUBY_MAJOR/ruby-$RUBY_VERSION
 
 WORKDIR /usr/src/ruby
 RUN autoconf
-RUN ./configure --disable-install-doc
+RUN ./configure --disable-install-doc --with-jemalloc
 RUN make -j"$(nproc)"
 RUN apt-get purge -y --auto-remove bison ruby
 RUN make install
