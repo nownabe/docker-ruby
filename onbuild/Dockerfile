@@ -1,4 +1,4 @@
-FROM nownabe/ruby:latest
+FROM nownabe/ruby:2.2.0
 MAINTAINER nownabe
 
 RUN bundle config --global frozen 1
