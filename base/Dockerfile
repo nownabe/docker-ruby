@@ -1,4 +1,4 @@
-FROM buildpack-deps:jessie
+FROM buildpack-deps:wheezy
 MAINTAINER nownabe
 
 ENV RUBY_MAJOR 2.2
