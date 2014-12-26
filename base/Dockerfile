@@ -7,7 +7,7 @@ ENV RUBY_VERSION 2.2.0
 RUN apt-get update && apt-get install -y curl procps && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update
-RUN apt-get install -y bison ruby
+RUN apt-get install -y bison ruby libjemalloc-dev
 RUN rm -rf /var/lib/apt/lists/*
 RUN mkdir -p /usr/src/ruby
 RUN curl -SL "http://cache.ruby-lang.org/pub/ruby/$RUBY_MAJOR/ruby-$RUBY_VERSION.tar.bz2" \
