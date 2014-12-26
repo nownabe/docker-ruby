@@ -9,9 +9,10 @@ RUN apt-get update
 RUN apt-get install -y bison ruby
 RUN rm -rf /var/lib/apt/lists/*
 RUN mkdir -p /usr/src/ruby
-RUN curl -SL "http://cache.ruby-lang.org/pub/ruby/$RUBY_MAJOR/ruby-$RUBY_VERSION.tar.bz2"
+RUN curl -SL "http://cache.ruby-lang.org/pub/ruby/$RUBY_MAJOR/ruby-$RUBY_VERSION.tar.bz2" \
     | tar -xjC /usr/src/ruby --strip-components=1
-RUN cd /usr/src/ruby
+
+WORKDIR /usr/src/ruby
 RUN autoconf
 RUN ./configure --disable-install-doc
 RUN make -j"$(nproc)"
