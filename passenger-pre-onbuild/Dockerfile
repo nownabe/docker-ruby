@@ -1,4 +1,5 @@
 FROM nownabe/ruby:latest-passenger-pre
+MAINTAINER nownabe
 
 COPY nginx.conf /opt/nginx/conf/nginx.conf
 
@@ -14,3 +15,5 @@ ONBUILD RUN bundle install
 ONBUILD COPY . /usr/src/app
 
 CMD ["/opt/nginx/sbin/nginx", "-c", "/opt/nginx/conf/nginx.conf"]
+
+EXPOSE 80
