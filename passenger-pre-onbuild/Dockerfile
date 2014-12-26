@@ -1,6 +1,6 @@
-FROM nownabe/ruby:2.2.0-passenger-pre
+FROM nownabe/ruby:latest-passenger-pre
 
-COPY nginx.conf 
+COPY nginx.conf /opt/nginx/conf/nginx.conf
 
 RUN bundle config --global frozen 1
 
@@ -12,3 +12,5 @@ ONBUILD COPY Gemfile.lock /usr/src/app/
 ONBUILD RUN bundle install
 
 ONBUILD COPY . /usr/src/app
+
+CMD ["/opt/nginx/sbin/nginx", "-c", "/opt/nginx/conf/nginx.conf"]

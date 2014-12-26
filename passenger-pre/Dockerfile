@@ -1,7 +1,7 @@
-FROM nownabe/ruby:2.2.0
+FROM nownabe/ruby:latest
 MAINTAINER nownabe
 
-RUN bundle install passenger --pre
+RUN gem install passenger --prerelease
 RUN passenger-install-nginx-module --auto --languages ruby
 
 
